@@ -63,7 +63,8 @@ body.valentine-theme {
 .scene {
     position: absolute;
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
+    height: 900px;
     padding: 20px;
     display: flex;
     flex-direction: column;
