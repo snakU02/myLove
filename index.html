@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story ✨</title>
+    <meta name="description" content="A walk down memory lane.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Outfit:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="neutral-theme">
+    <div id="particles-container"></div>
+
+    <main class="scene-manager">
+        <!-- Scene 0: Memory Lane -->
+        <section id="scene-0" class="scene active">
+            <div class="memory-container">
+                <div class="polaroid-stack" id="polaroid-stack">
+                    <!-- Photos will be dynamically added here -->
+                </div>
+                <div class="memory-controls">
+                    <h2 id="memory-title" class="memory-title">Our First Memories...</h2>
+                    <p id="memory-count" class="memory-count">1 / 10</p>
+                    <button id="next-memory-btn" class="btn-neutral">Next Memory →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scene 1: The Mystery Gift -->
+        <section id="scene-1" class="scene hidden">
+            <div class="gift-wrapper">
+                <div class="gift-box" id="gift-box">
+                    <div class="gift-lid"></div>
+                    <div class="gift-ribbon"></div>
+                </div>
+                <p class="hint-text">I have something else for you... <span class="tap-hint">Tap the box</span></p>
+            </div>
+        </section>
+
+        <!-- Scene 2: The Letter Reveal -->
+        <section id="scene-2" class="scene hidden">
+            <div class="letter-container">
+                <div class="envelope" id="envelope">
+                    <div class="envelope-back"></div>
+                    <div class="letter" id="letter">
+                        <div class="letter-content" id="letter-content">
+                            <!-- Messages will be injected here -->
+                        </div>
+                    </div>
+                    <div class="envelope-front"></div>
+                    <div class="envelope-flap"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scene 3: The Big Question -->
+        <section id="scene-3" class="scene hidden">
+            <div class="card" id="main-card">
+                <div class="heart-icon">❤️</div>
+                <h1 class="question" id="question-text">Will you be my Valentine?</h1>
+                <div class="options">
+                    <button id="yes-btn" class="btn yes">Yes! ✨</button>
+                    <button id="no-btn" class="btn no">No 🥺</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Scene: Celebration -->
+        <section id="success-screen" class="scene hidden">
+            <div id="celebration-photos-bg" class="celebration-photos"></div>
+            <div class="success-content">
+                <h1 class="success-title">Yay!!! ❤️</h1>
+                <p class="success-subtitle">I promise it'll be a magical day!</p>
+                <div class="floating-hearts-big">💖✨🌻🌷</div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
