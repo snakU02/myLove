@@ -8,7 +8,6 @@ const envelope = document.getElementById('envelope');
 const letterContent = document.getElementById('letter-content');
 const yesBtn = document.getElementById('yes-btn');
 const noBtn = document.getElementById('no-btn');
-const progressFill = document.getElementById('story-progress-fill');
 
 const scenes = {
     0: document.getElementById('scene-0'),
@@ -54,7 +53,6 @@ function initPolaroids() {
     }
 }
 initPolaroids();
-updateProgress(0);
 
 nextMemoryBtn.addEventListener('click', () => {
     if (currentPhotoIndex <= totalPhotos) {
@@ -94,12 +92,6 @@ function updateTheme(index) {
 // --- Scene Management ---
 const celebPhotosBg = document.getElementById('celebration-photos-bg');
 
-function updateProgress(stage) {
-    if (!progressFill) return;
-    const stages = { 0: 20, 1: 40, 2: 60, 3: 80, final: 100 };
-    progressFill.style.width = `${stages[stage] || 20}%`;
-}
-
 function switchScene(from, to) {
     scenes[from].classList.remove('active');
     scenes[from].classList.add('hidden');
@@ -109,7 +101,6 @@ function switchScene(from, to) {
         // Ensure theme is active if we jumped to scene 1
         document.body.classList.add('valentine-theme');
         particlesActive = true;
-        updateProgress(to);
 
         if (to === 'final') {
             setupCelebration();
@@ -173,21 +164,6 @@ function applyRandomFloatingStyle(el) {
 // --- Interaction Logic ---
 
 // Scene 1 -> 2
-
-giftBox.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        giftBox.click();
-    }
-});
-
-envelope.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        envelope.click();
-    }
-});
-
 giftBox.addEventListener('click', () => {
     giftBox.style.transform = 'scale(0) rotate(20deg)';
     setTimeout(() => switchScene(1, 2), 500);
