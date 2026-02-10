@@ -18,15 +18,20 @@
     <div id="particles-container"></div>
 
     <main class="scene-manager">
+        <div class="story-progress" aria-label="Story progress">
+            <div class="story-progress-fill" id="story-progress-fill"></div>
+        </div>
+
         <!-- Scene 0: Memory Lane -->
         <section id="scene-0" class="scene active">
             <div class="memory-container">
+                <p class="scene-label">Chapter 1 · Memories</p>
                 <div class="polaroid-stack" id="polaroid-stack">
                     <!-- Photos will be dynamically added here -->
                 </div>
                 <div class="memory-controls">
                     <h2 id="memory-title" class="memory-title">Our First Memories...</h2>
-                    <p id="memory-count" class="memory-count">1 / 10</p>
+                    <p id="memory-count" class="memory-count" aria-live="polite">1 / 10</p>
                     <button id="next-memory-btn" class="btn-neutral">Next Memory →</button>
                 </div>
             </div>
@@ -35,7 +40,8 @@
         <!-- Scene 1: The Mystery Gift -->
         <section id="scene-1" class="scene hidden">
             <div class="gift-wrapper">
-                <div class="gift-box" id="gift-box">
+                <p class="scene-label">Chapter 2 · Surprise</p>
+                <div class="gift-box" id="gift-box" role="button" tabindex="0" aria-label="Open gift box">
                     <div class="gift-lid"></div>
                     <div class="gift-ribbon"></div>
                 </div>
@@ -46,7 +52,8 @@
         <!-- Scene 2: The Letter Reveal -->
         <section id="scene-2" class="scene hidden">
             <div class="letter-container">
-                <div class="envelope" id="envelope">
+                <p class="scene-label">Chapter 3 · Letter</p>
+                <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open envelope letter">
                     <div class="envelope-back"></div>
                     <div class="letter" id="letter">
                         <div class="letter-content" id="letter-content">
@@ -62,6 +69,7 @@
         <!-- Scene 3: The Big Question -->
         <section id="scene-3" class="scene hidden">
             <div class="card" id="main-card">
+                <p class="scene-label">Chapter 4 · The Question</p>
                 <div class="heart-icon">❤️</div>
                 <h1 class="question" id="question-text">Will you be my Valentine?</h1>
                 <div class="options">
@@ -75,6 +83,7 @@
         <section id="success-screen" class="scene hidden">
             <div id="celebration-photos-bg" class="celebration-photos"></div>
             <div class="success-content">
+                <p class="scene-label">Final Chapter · Celebration</p>
                 <h1 class="success-title">Yay!!! ❤️</h1>
                 <p class="success-subtitle">I promise it'll be a magical day!</p>
                 <div class="floating-hearts-big">💖✨🌻🌷</div>
